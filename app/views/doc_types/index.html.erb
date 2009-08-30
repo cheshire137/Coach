@@ -1,0 +1,20 @@
+<h1>Listing doc_types</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+  </tr>
+
+<% @doc_types.each do |doc_type| %>
+  <tr>
+    <td><%=h doc_type.name %></td>
+    <td><%= link_to 'Show', doc_type %></td>
+    <td><%= link_to 'Edit', edit_doc_type_path(doc_type) %></td>
+    <td><%= link_to 'Destroy', doc_type, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New doc_type', new_doc_type_path %>

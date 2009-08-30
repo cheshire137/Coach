@@ -10,6 +10,51 @@ SET escape_string_warning = off;
 
 SET search_path = public, pg_catalog;
 
+--
+-- Name: player_class; Type: TYPE; Schema: public; Owner: -
+--
+
+CREATE TYPE player_class AS ENUM (
+    'freshman',
+    'sophomore',
+    'junior',
+    'senior'
+);
+
+
+--
+-- Name: player_position; Type: TYPE; Schema: public; Owner: -
+--
+
+CREATE TYPE player_position AS ENUM (
+    'center',
+    'offensive guard',
+    'offensive tackle',
+    'tight end',
+    'wide receiver',
+    'fullback',
+    'running back',
+    'quarterback',
+    'defensive end',
+    'defensive tackle',
+    'nose guard',
+    'linebacker',
+    'cornerback',
+    'safety',
+    'nickelback',
+    'dimeback',
+    'kicker',
+    'holder',
+    'long snapper',
+    'kick returner',
+    'punter',
+    'upback',
+    'punt returner',
+    'gunner',
+    'wedge buster'
+);
+
+
 SET default_tablespace = '';
 
 SET default_with_oids = false;
@@ -49,7 +94,7 @@ ALTER SEQUENCE authors_author_id_seq OWNED BY authors.author_id;
 
 CREATE TABLE content_types (
     content_type_id integer NOT NULL,
-    content_type character varying(255)
+    name character varying(255)
 );
 
 
@@ -78,7 +123,7 @@ ALTER SEQUENCE content_types_content_type_id_seq OWNED BY content_types.content_
 
 CREATE TABLE doc_types (
     doc_type_id integer NOT NULL,
-    doc_type character varying(255)
+    name character varying(255)
 );
 
 
@@ -165,11 +210,11 @@ CREATE TABLE players (
     player_id integer NOT NULL,
     team_id integer,
     name character varying(255),
-    "position" character varying(255),
     number integer,
-    class character varying(255),
     height character varying(255),
-    weight character varying(255)
+    weight character varying(255),
+    class player_class,
+    "position" player_position
 );
 
 
@@ -207,7 +252,7 @@ CREATE TABLE schema_migrations (
 
 CREATE TABLE tags (
     tag_id integer NOT NULL,
-    tag character varying(255)
+    name character varying(255)
 );
 
 

@@ -1,7 +1,7 @@
 class CreateDocTypes < ActiveRecord::Migration
   def self.up
     create_table(:doc_types, :primary_key => :doc_type_id) do |t|
-      t.column :doc_type, :string
+      t.column :name, :string
     end
   end
 

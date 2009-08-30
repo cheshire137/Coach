@@ -16,11 +16,11 @@ ActiveRecord::Schema.define(:version => 20090830164205) do
   end
 
   create_table "content_types", :primary_key => "content_type_id", :force => true do |t|
-    t.string "content_type"
+    t.string "name"
   end
 
   create_table "doc_types", :primary_key => "doc_type_id", :force => true do |t|
-    t.string "doc_type"
+    t.string "name"
   end
 
   create_table "docs", :primary_key => "doc_id", :force => true do |t|
@@ -44,18 +44,11 @@ ActiveRecord::Schema.define(:version => 20090830164205) do
     t.integer "author_id", :null => false
   end
 
-  create_table "players", :primary_key => "player_id", :force => true do |t|
-    t.integer "team_id"
-    t.string  "name"
-    t.string  "position"
-    t.integer "number"
-    t.string  "class"
-    t.string  "height"
-    t.string  "weight"
-  end
+# Could not dump table "players" because of following StandardError
+#   Unknown type 'player_class' for column 'class'
 
   create_table "tags", :primary_key => "tag_id", :force => true do |t|
-    t.string "tag"
+    t.string "name"
   end
 
   create_table "teams", :primary_key => "team_id", :force => true do |t|
