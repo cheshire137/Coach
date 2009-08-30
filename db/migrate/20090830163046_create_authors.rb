@@ -1,8 +1,7 @@
 class CreateAuthors < ActiveRecord::Migration
   def self.up
-    create_table :authors do |t|
-
-      t.timestamps
+    create_table(:authors, :primary_key => :author_id) do |t|
+      t.column :name, :string
     end
   end
 

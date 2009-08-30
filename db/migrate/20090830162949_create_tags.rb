@@ -1,8 +1,7 @@
 class CreateTags < ActiveRecord::Migration
   def self.up
-    create_table :tags do |t|
-
-      t.timestamps
+    create_table(:tags, :primary_key => :tag_id) do |t|
+      t.column :tag, :string
     end
   end
 
