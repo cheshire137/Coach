@@ -1,0 +1,38 @@
+<p>
+  <b>Path:</b>
+  <%=h @doc.path %>
+</p>
+
+<p>
+  <b>Doc type:</b>
+  <%=h @doc.doc_type_id %>
+</p>
+
+<p>
+  <b>Content type:</b>
+  <%=h @doc.content_type_id %>
+</p>
+
+<p>
+  <b>Title:</b>
+  <%=h @doc.title %>
+</p>
+
+<p>
+  <b>Summary:</b>
+  <%=h @doc.summary %>
+</p>
+
+<p>
+  <b>Date:</b>
+  <%=h @doc.date %>
+</p>
+
+<p>
+  <b>Location:</b>
+  <%=h @doc.location %>
+</p>
+
+
+<%= link_to 'Edit', edit_doc_path(@doc) %> |
+<%= link_to 'Back', docs_path %>

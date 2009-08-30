@@ -1,0 +1,32 @@
+<h1>Listing docs</h1>
+
+<table>
+  <tr>
+    <th>Path</th>
+    <th>Doc type</th>
+    <th>Content type</th>
+    <th>Title</th>
+    <th>Summary</th>
+    <th>Date</th>
+    <th>Location</th>
+  </tr>
+
+<% @docs.each do |doc| %>
+  <tr>
+    <td><%=h doc.path %></td>
+    <td><%=h doc.doc_type_id %></td>
+    <td><%=h doc.content_type_id %></td>
+    <td><%=h doc.title %></td>
+    <td><%=h doc.summary %></td>
+    <td><%=h doc.date %></td>
+    <td><%=h doc.location %></td>
+    <td><%= link_to 'Show', doc %></td>
+    <td><%= link_to 'Edit', edit_doc_path(doc) %></td>
+    <td><%= link_to 'Destroy', doc, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New doc', new_doc_path %>
